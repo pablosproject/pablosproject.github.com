@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://pablosproject.com/blog/2012/11/07/test-driven-developement-c-with-eclipse/
+        </loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/about/</loc>
+        <lastmod>2013-09-22T01:14:15+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/about-me/</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/archives/</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/blog/archives/</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/blog/</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pablosproject.com/robots.txt</loc>
+        <lastmod>2013-09-22T00:52:02+02:00</lastmod>
+    </url>
+</urlset>

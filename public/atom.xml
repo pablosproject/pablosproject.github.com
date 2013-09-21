@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://pablosproject.com/atom.xml" rel="self"/>
+  <link href="http://pablosproject.com/"/>
+  <updated>2013-09-22T01:34:24+02:00</updated>
+  <id>http://pablosproject.com/</id>
+  <author>
+    <name><![CDATA[Paolo Tagliani]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Test Driven Developement C++ with Eclipse]]></title>
+    <link href="http://pablosproject.com/blog/2012/11/07/test-driven-developement-c-with-eclipse/"/>
+    <updated>2012-11-07T00:00:00+01:00</updated>
+    <id>http://pablosproject.com/blog/2012/11/07/test-driven-developement-c-with-eclipse</id>
+    <content type="html"><![CDATA[The first thing to do is create a new project for testing. I have a project called<em> MyProject</em>, and then I create a new project called <em>MyProjectTesting</em>.
+
+I have all the source code in a folder called src.
+
+Download the<strong> Google C++ Testing Framework</strong> at these link : <a>http://code.google.com/p/googletest/downloads/detail?name=gtest-1.6.0.zip&amp;can=2&amp;q= </a>.
+Make a folder into your project and name it <em>testing_lib</em>, and then extract the Google Testing framework with the following command (from the Google Test folder):
+<strong>*/scripts/fuse_gtest_files.py ./testing_lib*</strong>
+
+Now the most important part, create a folder and name it <em>imported_src</em>. While you&#8217;re creating it select <em>advanced</em>, and then Link to alternate location, and select the *src* folder in MyProject, like in these screenshot.
+<p style="text-align: center;"><a href="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121005alle17.png"><img class="alignnone size-medium wp-image-22" title="schermata20121005alle17" src="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121005alle17-300x187.png" alt="" width="300" height="187" /></a></p>
+Now you&#8217;ve a mirror to your src folder. Select the file containing the <em>main</em>, and right-click. Select <em>Exclude from build</em>, and select all the build profiles.
+
+Now we need to tell the compiler how to link the test library with the source file. First of all create a folder in your project and name it <em>test</em>; then right-click on <em>test -&gt;properties-&gt;C/C++ Build</em>, and then add to the <em>Includes-&gt;Incude Path</em> two folders: the first is the folder with the test library, that we call <em>testing_lib</em>, and the other id the original source file folder, called <em>imported_src</em>, as showed in these screenshot.
+<p style="text-align: center;"><a href="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121006alle00.png"><img class="alignnone size-medium wp-image-23" title="schermata20121006alle00" src="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121006alle00-300x187.png" alt="" width="300" height="187" /></a></p>
+Make the same thing with the <em>testing</em> folder, but these time link the folder with itself. These is an important step, if you don&#8217;t do this, the compiler&#8217;ll complain.
+
+Now in the <em>test</em> folder add a file called MainTest.cpp and paste the following code:
+<pre>include "gtest/gtest.h"
+
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&amp;argc, argv);
+  return RUN_ALL_TESTS();
+}</pre>
+This will launch all the tests (these step is not necessary because the testing framework has an auto-main option). After that write a first test case, let&#8217;s assume that I have a class called <em>Sin</em> that implements a simple sin function. Now I write a simple test case using GoogleTest rules, and launch it, the result is showed here:
+<p style="text-align: center;"><a href="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121006alle001.png"><img class="alignnone size-medium wp-image-24" title="schermata20121006alle00" src="http://www.pablosproject.com/wp-content/uploads/2012/11/schermata20121006alle001-300x187.png" alt="" width="300" height="187" /></a></p>
+You&#8217;ve done! Now you can write all the test case that you want, and Google Test Framework&#8217;ll execute all the tests on your source code without modifying it.
+]]></content>
+  </entry>
+  
+</feed>
